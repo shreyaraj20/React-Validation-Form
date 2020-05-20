@@ -123,3 +123,39 @@ input.error {
   color: #999;
   font-weight: lighter;
 }
+@media screen and(max-width:768px) {
+  .form-wrapper {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  form {
+    width: auto;
+    display: block;
+    flex-wrap: wrap;
+  }
+
+  .firstName,
+  .lastName,
+  .email,
+  .password {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .firstName,
+  .lastName {
+    width: 100%;
+  }
+
+  .email,
+  .password {
+    width: 100%;
+  }
+
+  .createAccount {
+    width: 100%;
+    display: block;
+    align-items: center;
+  }
+}
