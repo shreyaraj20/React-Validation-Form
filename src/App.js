@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./styles.css";
-
+import Modal from "react-modal";
 const emailRegexp = RegExp(
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
@@ -25,6 +25,7 @@ class App extends Component {
       lastName: null,
       email: null,
       password: null,
+      modalIsOpen: false,
       formErrors: {
         firstName: "",
         lastName: "",
@@ -78,8 +79,9 @@ class App extends Component {
       console.log(this.state);
     });
   };
+
   render() {
-    const { formErrors } = this.state;
+    const { formErrors, modalIsOpen } = this.state;
     return (
       <div className="wrapper container-fluid">
         <div className="form-wrapper">
@@ -142,8 +144,20 @@ class App extends Component {
               )}
             </div>
             <div className="createAccount">
-              <button type="submit">Create Account</button>
+              <button
+                type="submit"
+                onClick={() => this.setState({ modalIsOpen: true })}
+              >
+                Create Account
+              </button>
               <small>Already Have an Account</small>
+
+              <Modal isOpen={modalIsOpen}>
+                <h4 className="modalh1">Congratulation!!</h4>
+                <p className="modalp">
+                  You have Successfully created your account.
+                </p>
+              </Modal>
             </div>
           </form>
         </div>
