@@ -81,7 +81,7 @@ class App extends Component {
   render() {
     const { formErrors } = this.state;
     return (
-      <div className="wrapper">
+      <div className="wrapper container-fluid">
         <div className="form-wrapper">
           <h1>Create Account</h1>
           <form onSubmit={this.handleSubmit} noValidate>
